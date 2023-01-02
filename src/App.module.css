@@ -1,0 +1,35 @@
+body{
+    background-color: #E1B771;
+}
+
+.title{
+    font-size: 60px;
+    text-align: center;
+    background: linear-gradient(to right, #FFB400, #FAF082);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px black;
+    margin-top: 5%;
+}
+
+.container_logo{
+    margin-left: 70%;
+    margin-top: 5%;
+}
+.logo{
+    height:30px;
+    width: 30px;
+    margin-left: 0.5%;
+}
+.h3 {
+    font-size: 22px;
+    -webkit-text-stroke: 1px gray;
+    float:left;
+    margin: 0px;
+}
+.h4{
+    margin: 0px;
+    position:relative;
+    left:25%
+}
+
