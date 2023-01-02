@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import styles from './App.module.css';
+import Converter from './Converter';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <img className={styles.logo} alt='electricity_logo' src='flash.png'/>
         <h4 className={styles.h4}>Created by. JUHA</h4>
       </div>
+      <Converter />
     </div>
   );
 }
