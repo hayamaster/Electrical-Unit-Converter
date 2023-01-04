@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import ElectronToCoulmb from './eToC';
+import JouleToCalorie from './JTocal';
 
 function Converter() {
     const [index, setIndex] = useState('init');
@@ -14,7 +15,7 @@ function Converter() {
             <hr />
             {index === 'init' ? "Please Select your units" : null}
             {index === '1' ? <ElectronToCoulmb/> : null}
-
+            {index === '2' ? <JouleToCalorie/> : null}
         </div>
     );
 }

@@ -1,5 +1,23 @@
 import {useState, useEffect} from 'react';
 
+function numViewer(num) {
+    if (num.toString().length > 5){
+        const numExp = Number.parseFloat(num).toExponential(3);
+        let eTo10 = '';
+        if (numExp.toString()[0] === '-') {
+            eTo10 = numExp.toString().substring(7);
+            if (eTo10[0] === '+') eTo10 = eTo10.substring(1);
+            return numExp.substring(0, 6) + '×10^(' + eTo10 + ')';
+        }
+        else {
+            eTo10 = numExp.toString().substring(6)
+            if (eTo10[0] === '+') eTo10 = eTo10.substring(1);
+            return numExp.substring(0, 5) + '×10^(' + eTo10 + ")";
+        }
+    }
+    return num;
+}
+
 function ElectronToCoulmb(){
     const [amount, setAmount] = useState('');
     const [flipped, setFlipped] = useState(false);
@@ -16,27 +34,10 @@ function ElectronToCoulmb(){
         if (list.length > 4) list.splice(4) //restrict size of list[] for visualization
     }
     const reset = () => setList([]);
-    function numViewer(num) {
-        if (num.toString().length > 5){
-            const numExp = Number.parseFloat(num).toExponential(3);
-            let eTo10 = '';
-            if (numExp.toString()[0] === '-') {
-                eTo10 = numExp.toString().substring(7);
-                if (eTo10[0] === '+') eTo10 = eTo10.substring(1);
-                return numExp.substring(0, 6) + '×10^(' + eTo10 + ')';
-            }
-            else {
-                eTo10 = numExp.toString().substring(6)
-                if (eTo10[0] === '+') eTo10 = eTo10.substring(1);
-                return numExp.substring(0, 5) + '×10^(' + eTo10 + ")";
-            }
-        }
-        return num;
-    }
     return (
         <div>
             <h3>Electron[e] ↔︎ Quantity of electric charge[C]</h3>
-            <h4>1e = 1.602 × 10^(-19) [C]</h4>
+            <h4>1[e] = 1.602 × 10^(-19)[C]</h4>
             <div>
                 <label htmlFor='electron'>Electron: </label>
                 <input 
