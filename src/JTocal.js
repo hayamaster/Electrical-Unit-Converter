@@ -1,21 +1,8 @@
 import {useState, useEffect} from 'react';
+import './Converter.css'
 
 function numViewer(num) {
-    if (num.toString().length > 5){
-        const numExp = Number.parseFloat(num).toExponential(3);
-        let eTo10 = '';
-        if (numExp.toString()[0] === '-') {
-            eTo10 = numExp.toString().substring(7);
-            if (eTo10[0] === '+') eTo10 = eTo10.substring(1);
-            return numExp.substring(0, 6) + '×10^(' + eTo10 + ')';
-        }
-        else {
-            eTo10 = numExp.toString().substring(6)
-            if (eTo10[0] === '+') eTo10 = eTo10.substring(1);
-            return numExp.substring(0, 5) + '×10^(' + eTo10 + ")";
-        }
-    }
-    return num;
+    return num.toFixed(3);
 }
 
 function JouleToCalorie(){
@@ -37,9 +24,9 @@ function JouleToCalorie(){
     
     return (
         <div>
-            <h3>Joule[J] ↔︎ Calorie[cal]</h3>
-            <h4>1[J] = 0.2388[cal]</h4>
-            <div>
+            <h3 className='title'>Joule[J] ↔︎ Calorie[cal]</h3>
+            <h4 className='formula'>1[J] = 0.2388[cal]</h4>
+            <div className='input'>
                 <label htmlFor='joule'>Joule: </label>
                 <input
                     value={flipped ? numViewer(amount * 4.1868) : amount}
@@ -49,8 +36,9 @@ function JouleToCalorie(){
                     onChange={onChange}
                     disabled={flipped}
                 />
+                <label htmlFor='joule'>  [J]</label>
             </div>
-            <div>
+            <div className='input'>
                 <label htmlFor='calorie'>Calorie: </label>
                 <input
                     value={flipped ? amount : numViewer(amount * 0.238846)}
@@ -60,10 +48,12 @@ function JouleToCalorie(){
                     onChange={onChange}
                     disabled={!flipped}
                 />
+                <label htmlFor='calorie'>  [cal]</label>
             </div>
-            <button onClick={onFlip}>{flipped ? "Return Back" : "Filp"}</button>
-            <button onClick={onSave}>Save</button>
+            <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
+            <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
             <div>
+                <p>History</p>
                 <ul>
                     {list.map((item, index) => (
                         <li key={index}>{item}</li>

@@ -8,8 +8,8 @@ function Converter() {
     return (
         <div>
             <select value={index} onChange={onSelect}>
-                <option value='init'>Select your units</option>
-                <option value='1'>Electron & Coulomb</option>
+                <option value='init'>- Select your units -</option>
+                <option value='1'>electron & Coulomb</option>
                 <option value='2'>Joule & calorie</option>
             </select>
             <hr />

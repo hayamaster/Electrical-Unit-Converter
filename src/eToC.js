@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import './Converter.css';
 
 function numViewer(num) {
     if (num.toString().length > 5){
@@ -36,9 +37,9 @@ function ElectronToCoulmb(){
     const reset = () => setList([]);
     return (
         <div>
-            <h3>Electron[e] ↔︎ Quantity of electric charge[C]</h3>
-            <h4>1[e] = 1.602 × 10^(-19)[C]</h4>
-            <div>
+            <h3 className='title'>Electron[e] ↔︎ Quantity of electric charge[C]</h3>
+            <h4 className='formula'>1[e] = 1.602 × 10^(-19)[C]</h4>
+            <div className='input'>
                 <label htmlFor='electron'>Electron: </label>
                 <input 
                     value={flipped ? numViewer(amount / 1.602 / (10**-19)) : amount}
@@ -48,8 +49,9 @@ function ElectronToCoulmb(){
                     onChange={onChange}
                     disabled={flipped}
                 />
+                <label htmlFor='electron'>  [e]</label>
             </div>
-            <div>
+            <div className='input'>
                 <label htmlFor='coulomb'>Coulomb: </label>
                 <input 
                     value={flipped ? amount : numViewer(amount * 1.602 * (10**-19))}
@@ -59,10 +61,12 @@ function ElectronToCoulmb(){
                     onChange={onChange}
                     disabled={!flipped}
                 />
+                <label htmlFor='coulomb'>  [C]</label>
             </div>
-            <button onClick={onFlip}>{flipped ? "Return Back" : "Filp"}</button>
-            <button onClick={onSave}>Save</button>
+            <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
+            <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
             <div>
+                <p>History</p>
                 <ul>
                     {list.map((item, index) => (
                         <li key={index}>{item}</li>
