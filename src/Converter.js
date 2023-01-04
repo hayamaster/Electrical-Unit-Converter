@@ -10,7 +10,7 @@ function Converter() {
             <select value={index} onChange={onSelect}>
                 <option value='init'>Select your units</option>
                 <option value='1'>Electron & Coulomb</option>
-                <option value='2'>J & kcal</option>
+                <option value='2'>Joule & calorie</option>
             </select>
             <hr />
             {index === 'init' ? "Please Select your units" : null}
