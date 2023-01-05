@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Electrical-Unit-Converter/static/css/main.371c575a.css",
+    "main.js": "/Electrical-Unit-Converter/static/js/main.ccd29011.js",
+    "index.html": "/Electrical-Unit-Converter/index.html",
+    "main.371c575a.css.map": "/Electrical-Unit-Converter/static/css/main.371c575a.css.map",
+    "main.ccd29011.js.map": "/Electrical-Unit-Converter/static/js/main.ccd29011.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.371c575a.css",
+    "static/js/main.ccd29011.js"
+  ]
+}
