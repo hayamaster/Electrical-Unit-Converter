@@ -26,32 +26,36 @@ function JouleToCalorie(){
         <div>
             <h3 className='title'>Joule[J] ↔︎ Calorie[cal]</h3>
             <h4 className='formula'>1[J] = 0.2388[cal]</h4>
-            <div className='input'>
-                <label htmlFor='joule'>Joule: </label>
-                <input
-                    value={flipped ? numViewer(amount * 4.1868) : amount}
-                    id='joule'
-                    placeholder='Joule'
-                    type={flipped ? 'string' : 'number'}
-                    onChange={onChange}
-                    disabled={flipped}
-                />
-                <label htmlFor='joule'>  [J]</label>
+            <div className='input-container'>
+                <div className='input'>
+                    <label htmlFor='electron'>Electron: </label>
+                    <input 
+                        value={flipped ? numViewer(amount / 1.602 / (10**-19)) : amount}
+                        id='electron'
+                        placeholder='Number of Electron'
+                        type={flipped ? "string" : "number"}
+                        onChange={onChange}
+                        disabled={flipped}
+                    />
+                    <label htmlFor='electron'>  [e]</label>
+                </div>
+                <div className='input'>
+                    <label htmlFor='coulomb'>Coulomb: </label>
+                    <input 
+                        value={flipped ? amount : numViewer(amount * 1.602 * (10**-19))}
+                        id='coulomb'
+                        placeholder='Quantity of electric charge'
+                        type={flipped ? "number" : "string"}
+                        onChange={onChange}
+                        disabled={!flipped}
+                    />
+                    <label htmlFor='coulomb'>  [C]</label>
+                </div>
             </div>
-            <div className='input'>
-                <label htmlFor='calorie'>Calorie: </label>
-                <input
-                    value={flipped ? amount : numViewer(amount * 0.238846)}
-                    id='calorie'
-                    placeholder='Calorie'
-                    type={flipped ? 'number' : 'string'}
-                    onChange={onChange}
-                    disabled={!flipped}
-                />
-                <label htmlFor='calorie'>  [cal]</label>
+            <div className='custom-btn-container'>
+                <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
+                <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
             </div>
-            <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
-            <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
             <div className='history-container'>
                 <p className='history'>History</p>
                 <div className='mac-btn'>

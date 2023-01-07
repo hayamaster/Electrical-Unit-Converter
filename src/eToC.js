@@ -69,7 +69,6 @@ function ElectronToCoulmb(){
                 <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
                 <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
             </div>
-            
             <div className='history-container'>
                 <p className='history'>History</p>
                 <div className='mac-btn'>
