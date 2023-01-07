@@ -65,8 +65,13 @@ function ElectronToCoulmb(){
             </div>
             <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
             <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
-            <div>
-                <p>History</p>
+            <div className='history-container'>
+                <p className='history'>History</p>
+                <div className='mac-btn'>
+                    <div className='btn close-btn'></div>
+                    <div className='btn min-btn'></div>
+                    <div className='btn max-btn'></div>
+                </div>
                 <ul>
                     {list.map((item, index) => (
                         <li key={index}>{item}</li>

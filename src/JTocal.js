@@ -59,7 +59,6 @@ function JouleToCalorie(){
                     <div className='btn min-btn'></div>
                     <div className='btn max-btn'></div>
                 </div>
-                {/* <p>History</p> */}
                 <ul>
                     {list.map((item, index) => (
                         <li key={index}>{item}</li>
