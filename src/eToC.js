@@ -39,32 +39,37 @@ function ElectronToCoulmb(){
         <div>
             <h3 className='title'>Electron[e] ↔︎ Quantity of electric charge[C]</h3>
             <h4 className='formula'>1[e] = 1.602 × 10^(-19)[C]</h4>
-            <div className='input'>
-                <label htmlFor='electron'>Electron: </label>
-                <input 
-                    value={flipped ? numViewer(amount / 1.602 / (10**-19)) : amount}
-                    id='electron'
-                    placeholder='Number of Electron'
-                    type={flipped ? "string" : "number"}
-                    onChange={onChange}
-                    disabled={flipped}
-                />
-                <label htmlFor='electron'>  [e]</label>
+            <div className='input-container'>
+                <div className='input'>
+                    <label htmlFor='electron'>Electron: </label>
+                    <input 
+                        value={flipped ? numViewer(amount / 1.602 / (10**-19)) : amount}
+                        id='electron'
+                        placeholder='Number of Electron'
+                        type={flipped ? "string" : "number"}
+                        onChange={onChange}
+                        disabled={flipped}
+                    />
+                    <label htmlFor='electron'>  [e]</label>
+                </div>
+                <div className='input'>
+                    <label htmlFor='coulomb'>Coulomb: </label>
+                    <input 
+                        value={flipped ? amount : numViewer(amount * 1.602 * (10**-19))}
+                        id='coulomb'
+                        placeholder='Quantity of electric charge'
+                        type={flipped ? "number" : "string"}
+                        onChange={onChange}
+                        disabled={!flipped}
+                    />
+                    <label htmlFor='coulomb'>  [C]</label>
+                </div>
             </div>
-            <div className='input'>
-                <label htmlFor='coulomb'>Coulomb: </label>
-                <input 
-                    value={flipped ? amount : numViewer(amount * 1.602 * (10**-19))}
-                    id='coulomb'
-                    placeholder='Quantity of electric charge'
-                    type={flipped ? "number" : "string"}
-                    onChange={onChange}
-                    disabled={!flipped}
-                />
-                <label htmlFor='coulomb'>  [C]</label>
+            <div className='custom-btn-container'>
+                <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
+                <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
             </div>
-            <button className='custom-btn btn-flip' onClick={onFlip}><span>Click me!</span><span>Flip!</span></button>
-            <button className='custom-btn btn-save' onClick={onSave}><span>Save</span></button>
+            
             <div className='history-container'>
                 <p className='history'>History</p>
                 <div className='mac-btn'>

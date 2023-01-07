@@ -48,6 +48,12 @@ li{
     font-size: 25px;
 }
 
+.input-container{
+    float: left;
+    margin-left: calc((100vw - 500px) / 2 - 50px);
+    margin-bottom: 5px;
+    width: 500px;
+}
 .input{
     text-align: center;
     margin: 15px;
@@ -69,6 +75,12 @@ button{
     margin:20px;
     padding:5px;
 }
+.custom-btn-container{
+    height: 100px;
+    width: 200px;
+    display: flex;
+    padding-top:5px;
+}
 .custom-btn {
     width: 90px;
     height: 36px;
@@ -87,9 +99,6 @@ button{
     outline: none;
   }  
 .btn-flip{
-    position: absolute;
-    left: 63%;
-    top: 47%;
     border:none;
     box-shadow: none;
     width: 90px;
@@ -99,6 +108,7 @@ button{
     perspective: 230px;
     font-size: 15px;
     font-weight: bold;
+    display: contents;
 }
 .btn-flip span {
     background: ffff00;
@@ -165,8 +175,10 @@ button{
     font-size: 15px;
     font-weight: bold;
     position: absolute;
-    left: 71%;
-    top: 48.8%;
+    top: 30px;
+    margin-left: 0;
+    margin-bottom: 0px;
+    position: relative;
 }
 .btn-save span {
     position: relative;
@@ -237,7 +249,8 @@ button{
 
 .history-container{
     height: 300px;
-    width: 50%;
+    /* width: 50%; */
+    width: 55vw;
     margin-left: auto;
     margin-right: auto;
     background: #5e5e5e;
@@ -260,7 +273,8 @@ button{
     justify-content: center;
     align-items: center;
     padding-top: 20px;
-    padding-left: 65%;
+    margin-left: 78%;
+    width: 150px;
 }
 
 .btn{
@@ -268,9 +282,6 @@ button{
     height: 15px;
     border-radius: 50%;
     margin-right: 20px;
-}
-.btn:last-child{
-    margin-right: 0;
 }
 
 .close-btn{
