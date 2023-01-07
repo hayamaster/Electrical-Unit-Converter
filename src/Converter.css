@@ -1,3 +1,30 @@
+.select{
+    border: 1px solid #aaa;
+    border-radius: .5em;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  
+    padding: .3em 1em .4em .8em;
+    margin: 0;
+    color: #444;
+    background-color:antiquewhite;
+}
+select:hover {
+    border-color: #888;
+  }
+select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+select:disabled {
+    opacity: 0.5;
+}
+
 ul{
     /* list-style-type: decimal; */
     color: white;
@@ -215,7 +242,7 @@ button{
     margin-right: auto;
     background: #5e5e5e;
     border-radius: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .history{
