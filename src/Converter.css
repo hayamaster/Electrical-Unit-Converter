@@ -1,5 +1,14 @@
 ul{
-    list-style-type: decimal;
+    /* list-style-type: decimal; */
+    color: white;
+    margin-left: auto;
+    margin-right:auto;
+    display: table;
+    margin-top: 22px;
+}
+li{
+    padding: 7px;
+    font-size: 20px;
 }
 
 .title{
@@ -197,4 +206,55 @@ button{
 }
 .btn-save span:hover:after {
     width: 100%;
+}
+
+.history-container{
+    height: 300px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #5e5e5e;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.history{
+    float: left;
+    font-size: 25px;
+    color:#ffff00;
+    /* padding-left: 20px; */
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 0;
+}
+
+.mac-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 65%;
+}
+
+.btn{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.btn:last-child{
+    margin-right: 0;
+}
+
+.close-btn{
+    background: #FF5d5b;
+    border: 4px solid #CF544D;
+}
+.min-btn{
+    background: #FFBB39;
+    border: 4px solid #CFA64E;
+}
+.max-btn{
+    background: #00cd4e;
+    border: 4px solid #0EA642;
 }
