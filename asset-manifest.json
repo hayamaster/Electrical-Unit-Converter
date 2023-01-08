@@ -1,13 +1,11 @@
 {
   "files": {
-    "main.css": "/Electrical-Unit-Converter/static/css/main.389e86d2.css",
-    "main.js": "/Electrical-Unit-Converter/static/js/main.702af2d5.js",
-    "index.html": "/Electrical-Unit-Converter/index.html",
-    "main.389e86d2.css.map": "/Electrical-Unit-Converter/static/css/main.389e86d2.css.map",
-    "main.702af2d5.js.map": "/Electrical-Unit-Converter/static/js/main.702af2d5.js.map"
+    "main.css": "/Electrical-Unit-Converter/static/css/main.442653ec.css",
+    "main.js": "/Electrical-Unit-Converter/static/js/main.52dc94cc.js",
+    "index.html": "/Electrical-Unit-Converter/index.html"
   },
   "entrypoints": [
-    "static/css/main.389e86d2.css",
-    "static/js/main.702af2d5.js"
+    "static/css/main.442653ec.css",
+    "static/js/main.52dc94cc.js"
   ]
 }
