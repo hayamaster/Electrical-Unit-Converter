@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/Electrical-Unit-Converter/static/css/main.442653ec.css",
-    "main.js": "/Electrical-Unit-Converter/static/js/main.52dc94cc.js",
+    "main.js": "/Electrical-Unit-Converter/static/js/main.e8dc1e74.js",
     "index.html": "/Electrical-Unit-Converter/index.html"
   },
   "entrypoints": [
     "static/css/main.442653ec.css",
-    "static/js/main.52dc94cc.js"
+    "static/js/main.e8dc1e74.js"
   ]
 }
