@@ -28,28 +28,28 @@ function JouleToCalorie(){
             <h4 className='formula'>1[J] = 0.2388[cal]</h4>
             <div className='input-container'>
                 <div className='input'>
-                    <label htmlFor='electron'>Electron: </label>
+                    <label htmlFor='electron'>Joule: </label>
                     <input 
-                        value={flipped ? numViewer(amount / 1.602 / (10**-19)) : amount}
+                        value={flipped ? numViewer(amount * 4.1868) : amount}
                         id='electron'
                         placeholder='Number of Electron'
                         type={flipped ? "string" : "number"}
                         onChange={onChange}
                         disabled={flipped}
                     />
-                    <label htmlFor='electron'>  [e]</label>
+                    <label htmlFor='electron'>  [J]</label>
                 </div>
                 <div className='input'>
-                    <label htmlFor='coulomb'>Coulomb: </label>
+                    <label htmlFor='coulomb'>Calorie: </label>
                     <input 
-                        value={flipped ? amount : numViewer(amount * 1.602 * (10**-19))}
+                        value={flipped ? amount : numViewer(amount * 0.238846)}
                         id='coulomb'
                         placeholder='Quantity of electric charge'
                         type={flipped ? "number" : "string"}
                         onChange={onChange}
                         disabled={!flipped}
                     />
-                    <label htmlFor='coulomb'>  [C]</label>
+                    <label htmlFor='coulomb'>  [cal]</label>
                 </div>
             </div>
             <div className='custom-btn-container'>
