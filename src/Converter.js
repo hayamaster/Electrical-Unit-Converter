@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ElectronToCoulmb from "./eToC";
 import JouleToCalorie from "./JTocal";
 import H from "./h";
-import "./Converter.css";
+import "./Converter.scss";
 
 function Converter() {
   const [index, setIndex] = useState("init");

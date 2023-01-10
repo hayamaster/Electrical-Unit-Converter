@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Converter.css";
+import "./Converter.scss";
 
 function numViewer(num) {
   if (num.toString().length <= 5) {
@@ -37,7 +37,7 @@ function H() {
   return (
     <div>
       <h3 className="title">Plank Constant [h]</h3>
-      <select className="select" value={index} onChange={onSelect}>
+      <select className="select h" value={index} onChange={onSelect}>
         <option value="init">h to J•s</option>
         <option value="1">h to eV•s</option>
       </select>

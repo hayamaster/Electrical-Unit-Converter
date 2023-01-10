@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Converter.css";
+import "./Converter.scss";
 
 function numViewer(num) {
   if (num.toString().length <= 5) {
