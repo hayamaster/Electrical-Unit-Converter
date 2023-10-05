@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ElectronToCoulmb from "./eToC";
-import JouleToCalorie from "./JTocal";
+import JouleToCalorie from "./JToCal";
 import H from "./h";
 import "./Converter.scss";
 

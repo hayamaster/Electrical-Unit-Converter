@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Converter.scss";
 
 function numViewer(num) {
@@ -14,59 +14,71 @@ function numViewer(num) {
   return numExp.substring(0, 5) + "×10^(" + eTo10 + ")";
 }
 
-function ElectronToCoulmb() {
+function H() {
   const [amount, setAmount] = useState("");
-  const [flipped, setFlipped] = useState(false);
   const [list, setList] = useState([]);
   const onChange = (event) => setAmount(event.target.value);
-  const onFlip = () => {
-    setAmount("");
-    setFlipped((current) => !current);
-  };
+  const onReset = () => setAmount("");
   const onSave = () => {
     setList((currentArray) => [
-      flipped
-        ? numViewer(amount / 1.602 / 10 ** -19)
-        : numViewer(amount * 1.602 * 10 ** -19),
+      index === "init"
+        ? numViewer(amount * 6.62606957 * 10 ** -19)
+        : numViewer(amount * 4.13566733 * 10 ** -15),
       ...currentArray,
     ]);
     if (list.length > 4) list.splice(4); //restrict size of list[] for visualization
   };
   const reset = () => setList([]);
+  const [index, setIndex] = useState("init");
+  const onSelect = (event) => {
+    setAmount("");
+    setIndex(event.target.value);
+  };
   return (
     <div>
-      <h3 className="title">Electron[e] ↔︎ Quantity of electric charge[C]</h3>
-      <h4 className="formula">1[e] = 1.602 × 10^(-19)[C]</h4>
+      <h3 className="title">Plank Constant [h]</h3>
+      <select className="select h" value={index} onChange={onSelect}>
+        <option value="init">h to J•s</option>
+        <option value="1">h to eV•s</option>
+      </select>
+      {index === "init" ? (
+        <h4 className="formula">h = 6.626 × 10^(-34) [J•s]</h4>
+      ) : null}
+      {index === "1" ? (
+        <h4 className="formula">h = 4.136 × 10^(-15) [eV•s]</h4>
+      ) : null}
       <div className="input-container">
         <div className="input">
-          <label htmlFor="electron">Electron: </label>
+          <label htmlFor="plank">input: </label>
           <input
-            value={flipped ? numViewer(amount / 1.602 / 10 ** -19) : amount}
-            id="electron"
-            placeholder="Number of Electron"
-            type={flipped ? "string" : "number"}
+            value={amount}
+            id="plank"
+            placeholder="plank constant h"
+            type="number"
             onChange={onChange}
-            disabled={flipped}
           />
-          <label htmlFor="electron"> [e]</label>
+          <label htmlFor="plank"> [h]</label>
         </div>
         <div className="input">
-          <label htmlFor="coulomb">Coulomb: </label>
+          <label htmlFor="output">output: </label>
           <input
-            value={flipped ? amount : numViewer(amount * 1.602 * 10 ** -19)}
-            id="coulomb"
-            placeholder="Quantity of electric charge"
-            type={flipped ? "number" : "string"}
+            value={
+              index === "init"
+                ? numViewer(amount * 6.62606957 * 10 ** -19)
+                : numViewer(amount * 4.13566733 * 10 ** -15)
+            }
+            id="output"
+            placeholder="here output"
+            type="string"
             onChange={onChange}
-            disabled={!flipped}
           />
-          <label htmlFor="coulomb"> [C]</label>
+          <label htmlFor="output"> [J•s]</label>
         </div>
       </div>
       <div className="custom-btn-container">
-        <button className="custom-btn btn-flip" onClick={onFlip}>
+        <button className="custom-btn btn-flip" onClick={onReset}>
           <span>Click me!</span>
-          <span>Flip!</span>
+          <span>Reset!</span>
         </button>
         <button className="custom-btn btn-save" onClick={onSave}>
           <span>Save</span>
@@ -90,4 +102,4 @@ function ElectronToCoulmb() {
   );
 }
 
-export default ElectronToCoulmb;
+export default H;
